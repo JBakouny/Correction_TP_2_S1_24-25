@@ -4,10 +4,12 @@ using namespace std;
 
 
 List create(int n) {
-    List result(n);
-    for (size_t i = 0; i < result.size(); ++i) {
+    List result;
+    for (int i = 0; i < n; ++i) {
         cout << "Entrez la valeur à l'indexe " << i << ": ";
-        cin >> result[i];
+        double x;
+        cin >> x;
+        result.push_back(x);
     }
     return result;
 }
