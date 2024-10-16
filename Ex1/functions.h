@@ -10,4 +10,4 @@ void affiche(const List& v);
 
 List reverse(const List& l);
 
-List concat(const List& l1, const List& l2);
+List concat(List l1, const List& l2);

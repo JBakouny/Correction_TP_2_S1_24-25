@@ -33,10 +33,9 @@ List reverse(const List& l) {
     return result;
 }
 
-List concat(const List & l1, const List& l2) {
-    List result(l1);
+List concat(List l1, const List& l2) {
     for (auto x : l2) {
-        result.push_back(x);
+        l1.push_back(x);
     }
-    return result;
+    return l1;
 }
