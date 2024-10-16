@@ -39,3 +39,23 @@ List concat(List l1, const List& l2) {
     }
     return l1;
 }
+
+ListVector createListVector(int numVectors) {
+    ListVector result;
+    cout << "On voudrai créer un vecteur composé de " << numVectors << " vecteurs de double." << endl;
+    for (size_t i = 0; i < numVectors; ++i) {
+        cout << "Saisissez la taille du vecteur numero " << i << " : ";
+        int n;
+        cin >> n;
+        result.push_back(create(n));
+    }
+    return result;
+}
+
+
+void affiche(const ListVector& v) {
+    for (auto l : v) {
+        affiche(l);
+        cout << endl;
+    }
+}
