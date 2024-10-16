@@ -22,12 +22,12 @@ void affiche(const List& v) {
 
 
 List reverse(const List& l) {
-    List result;
+    List result(l.size());
 
     size_t n = l.size();
 
-    for (int i = n-1; i >= 0; --i) {
-        result.push_back(l[i]);
+    for (size_t i = 0; i < n; ++i) {
+        result[i] = l[n - 1 - i];
     }
 
     return result;
