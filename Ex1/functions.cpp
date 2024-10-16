@@ -54,7 +54,7 @@ ListVector createListVector(int numVectors) {
 
 
 void affiche(const ListVector& v) {
-    for (auto l : v) {
+    for (const auto& l : v) {
         affiche(l);
         cout << endl;
     }
