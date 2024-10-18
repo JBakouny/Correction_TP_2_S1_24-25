@@ -19,3 +19,5 @@ ListVector createListVector(int numVectors);
 void affiche(const ListVector& v);
 
 ListVector reverse(const ListVector& l);
+
+List flatten(const ListVector& v);

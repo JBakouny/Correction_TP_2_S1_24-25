@@ -20,7 +20,6 @@ void affiche(const List& v) {
     cout << "]";
 }
 
-
 List reverse(const List& l) {
     List result(l.size());
 
@@ -68,3 +67,13 @@ ListVector reverse(const ListVector& v) {
     }
     return result;
 }
+
+List flatten(const ListVector& v)
+{
+    List result;
+    for (auto l : v) {
+        result = concat(result, l);
+    }
+    return result;   
+}
+
