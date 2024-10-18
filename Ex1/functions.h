@@ -17,3 +17,5 @@ typedef std::vector<List> ListVector; // ou using
 ListVector createListVector(int numVectors);
 
 void affiche(const ListVector& v);
+
+ListVector reverse(const ListVector& l);

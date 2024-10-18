@@ -59,3 +59,12 @@ void affiche(const ListVector& v) {
         cout << endl;
     }
 }
+
+
+ListVector reverse(const ListVector& v) {
+    ListVector result;
+    for (auto l : v) {
+        result.push_back(reverse(l));
+    }
+    return result;
+}
