@@ -6,6 +6,19 @@
 using namespace std; 
 
 int main() {
-    ListVector v = createListVector(3);
-    affiche(v);
+    ListVector lv = createListVector(3);
+    affiche(lv);
+    cout << endl;
+
+    ListVector rlv = reverse(lv);
+    affiche(rlv);
+    cout << endl;
+
+    List l = flatten(lv);
+    affiche(l);
+    cout << endl;
+
+    List rl = flatten(rlv);
+    affiche(rl);
+    cout << endl;
 }
