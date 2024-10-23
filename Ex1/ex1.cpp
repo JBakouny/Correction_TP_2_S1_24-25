@@ -6,6 +6,7 @@
 using namespace std; 
 
 int main() {
+
     ListVector lv = createListVector(3);
     affiche(lv);
     cout << endl;
@@ -14,11 +15,19 @@ int main() {
     affiche(rlv);
     cout << endl;
 
-    List l = flatten(lv);
-    affiche(l);
+    std::array<double, N* N> l = flatten(lv);
+    cout << "[ ";
+    for (auto x : l) {
+        cout << x << " ";
+    }
+    cout << "]";
     cout << endl;
 
-    List rl = flatten(rlv);
-    affiche(rl);
+    std::array<double, N* N> rl = flatten(rlv);
+    cout << "[ ";
+    for (auto x : rl) {
+        cout << x << " ";
+    }
+    cout << "]";
     cout << endl;
 }

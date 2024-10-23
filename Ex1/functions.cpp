@@ -3,8 +3,8 @@
 using namespace std;
 
 
-List create(int n) {
-    List result(n);
+List create() {
+    List result;
     for (size_t i = 0; i < result.size(); ++i) {
         cout << "Entrez la valeur à l'indexe " << i << ": ";
         cin >> result[i];
@@ -21,32 +21,33 @@ void affiche(const List& v) {
 }
 
 List reverse(const List& l) {
-    List result(l.size());
+    List result;
 
     size_t n = l.size();
 
-    for (size_t i = 0; i < n; ++i) {
-        result[i] = l[n - 1 - i];
+    for (int i = n-1; i >= 0; --i) {
+        result[n - 1 - i] = l[i];
     }
 
     return result;
 }
 
-List concat(List l1, const List& l2) {
-    for (auto x : l2) {
-        l1.push_back(x);
+std::array<double, 2 * N> concat(const List & l1, const List& l2) {
+    std::array<double, 2 * N> res;
+    for (int i = 0; i < N; ++i) {
+        res[i] = l1[i];
     }
-    return l1;
+    for (int i = 0; i < N; ++i) {
+        res[i+N] = l2[i];
+    }
+    return res;
 }
 
 ListVector createListVector(int numVectors) {
     ListVector result;
     cout << "On voudrai créer un vecteur composé de " << numVectors << " vecteurs de double." << endl;
     for (size_t i = 0; i < numVectors; ++i) {
-        cout << "Saisissez la taille du vecteur numero " << i << " : ";
-        int n;
-        cin >> n;
-        result.push_back(create(n));
+        result[i] = create();
     }
     return result;
 }
@@ -62,17 +63,19 @@ void affiche(const ListVector& v) {
 
 ListVector reverse(const ListVector& v) {
     ListVector result;
-    for (auto l : v) {
-        result.push_back(reverse(l));
+    for (size_t i = 0; i < v.size(); ++i) {
+        result[i] = reverse(v[i]);
     }
     return result;
 }
 
-List flatten(const ListVector& v)
+std::array<double, N * N> flatten(const ListVector& v)
 {
-    List result;
-    for (auto l : v) {
-        result = concat(result, l);
+    std::array<double, N* N> result{};
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < N; ++j) {
+            result[i * N + j] = v[i][j];
+        }
     }
     return result;   
 }
